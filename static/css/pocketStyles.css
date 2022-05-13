@@ -1,0 +1,104 @@
+
+body {
+  background-color: #5584AC;
+  font-family: "Rubik";
+  font-weight: bold;
+}
+
+p {
+  color: white;
+}
+
+.summary {
+  padding: 20px 20px;
+}
+
+.logo, .logo-sm, .s-div {
+  text-align: center;
+}
+
+.logo {
+  filter: drop-shadow(5px 5px 5px black);
+}
+
+.s-div {
+  margin-top: 3.5%;
+}
+
+.text-box {
+  padding: 7px 14px;
+  width: 125px;
+  border-radius: 5px;
+  border-color: #5584AC;
+  color: #5584AC;
+}
+
+.btn {
+  margin-top: 2%;
+  border-radius: 5px;
+  background-color: white;
+  border-color: #5584AC;
+  color : #5584AC;
+  padding: 7px 12px;
+  cursor: pointer;
+}
+
+.word-container {
+  padding-bottom: 10px;
+}
+
+h4 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.filler {
+  margin-top: 0px;
+  color: black;
+}
+
+.word {
+  color: black;
+  float: left;
+}
+
+.word-class {
+  font-style: italic;
+  color: #9FB4FF;
+  padding: 10px;
+}
+
+ol.custom {
+  list-style-type: none;
+  margin-left: 0;
+}
+
+ol.custom > li {
+  counter-increment: customlistcounter;
+}
+
+ol.custom > li:before {
+  content: counter(customlistcounter) ' ';
+  color: #9FB4FF;
+  float: left;
+  width: 1.2rem;
+}
+
+ol.custom:first-child {
+  counter-reset: customlistcounter;
+}
+
+li {
+  color: white;
+}
+
+.play {
+  background: transparent;
+  border: none;
+  float: left;
+  cursor: pointer;
+}
+
+.word-tangibles {
+  display: inline-block;
+}
