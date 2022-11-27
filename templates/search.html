@@ -1,0 +1,50 @@
+
+
+{% extends 'base.html' %}
+
+{% block head %}
+<title>{{ word }}</title>
+{% endblock %}
+
+{% block body %}
+    <div class="logo">
+      <img src="{{ url_for ('static', filename='images/book-clipart.png') }}"
+        width="250" height="250" alt="dictionary" />
+    </div>
+    <div>
+      <p class="logo-sm">ENGLISH POCKET DICTIONARY</p>
+    </div>
+    <div class="main-container">
+      {% for item in data[0]['meanings'] %}
+        <div class='word-container'>
+          <div class="word-and-class">
+            <span class="word">{{ word|upper }}</span>
+            <span class="word-class">{{ item['partOfSpeech'] }}</span>
+          </div>
+          <div class="word-tangibles">
+            <h4 class="word">{{ phonetics }}</h4>
+            <button class="play" onclick="playWord()">
+              <i class="fa-solid fa-volume-high"></i>
+            </button>
+            <audio id="wordAudio"><source src="{{ pronunciation }}" type="audio/mp3"></audio>
+          </div>
+          <div class="mng">
+            <p class="filler"><i> meaning </i></p>
+          </div>
+        </div>
+        <ol class='custom'>
+        {% for sub_item in item['definitions'] %}
+          <li><div class="meaning"><strong>:</strong> {{ sub_item['definition'].lower() }}</div></li>
+        {% endfor %}
+        </ol>
+        <br>
+      {% endfor %}
+    </div>
+    <div class="s-div">
+      <form action="{{ url_for ('home') }}">
+        <div class="submit-button">
+          <button class="btn" type="submit">HOME</button>
+        </div>
+      </form>
+    </div>
+{% endblock %}
